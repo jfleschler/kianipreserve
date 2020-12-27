@@ -6,10 +6,21 @@
     <title>Document</title>
 
     <style>
+      @font-face {
+        font-family: 'Aldhabi';
+        font-style: normal;
+        font-weight: normal;
+        src: local('fonts/Aldhabi'), url('fonts/aldhabi.woff') format('woff');
+      }
+
       body {
+        font-family: 'Aldhabi', serif;
         margin: 0;
         font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
+
       .background-wrapper, .content {
         position: absolute;
         left: 0;
@@ -23,7 +34,13 @@
         width: 100%;
         object-fit: cover;
       }
-
+      .logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100px;
+      }
       .content  {
         display: flex;
         flex-direction: column;
@@ -35,25 +52,37 @@
         text-align: center;
         color: white;
         font-size: 2.5rem;
-        padding: 0 2rem;
+        line-height: 2.5rem;
+        padding: 0 6rem;
       }
       .content a {
         color: white;
         font-size: 1.5rem;
       }
+
+      @media only screen and (max-width: 600px) {
+        .content p {
+          font-size: 2rem;
+          line-height: 2rem;
+          padding: 0 3rem;
+        }
+      }
     </style>
   </head>
+
   <body>
+    <img class="logo" src="img/logo.png" >
     <div class="content">
-      <p>Natus natus incidunt saepe deleniti qui adipisci ipsam consectetur et.</p>
-      <a href="mailto:info@kianipreserve.com">info@kianipreserve.com</a>
+      <p>Aldhabi Natus natus incidunt saepe deleniti qui adipisci ipsam consectetur et.</p>
+      <a target="_blank" href="mailto:info@kianipreserve.com">info@kianipreserve.com</a>
     </div>
 
-    <div class="background-wrapper">
+    <divthis class="background-wrapper">
       <img
         class="background-image"
         src="img/20201012_182452.jpg"
         alt="Kiani Preserve"
-      />
+      >
     </div>
 </html>
+
